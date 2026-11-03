@@ -2,7 +2,9 @@
 
 A Claude skill that turns a topic into a finished stickman film: an MP4 rendered entirely from code, with film-style camera work and real sound effects.
 
-- **Video:** 2D or 3D, any length, with planted-foot walking and a frame-by-frame audit.
+- **Story ideas:** a numbered list of ideas to pick from, fitted to your length.
+- **Storyboard:** a scene-by-scene table with preview images to approve before the render.
+- **Video:** 2D or 3D in the same look, any length, with planted-foot walking and a frame-by-frame audit.
 - **Voiceover:** writes scripts to paste into ElevenLabs, and builds the film to your MP3.
 - **Sound:** your choice of effects, background music and voiceover.
 - **YouTube:** title ideas and thumbnail prompts for ChatGPT, Google Flow or similar.
@@ -53,7 +55,7 @@ This route is easy to update, but the command becomes `/stickman:stickman`:
 ```
 
 ### For Claude
-If you were asked to install this skill, copy the `skills/stickman` folder from this repository to `~/.claude/skills/stickman` (on Windows, `%USERPROFILE%\.claude\skills\stickman`), then tell the person to start a new session and use `/stickman`. If you are in a chat without that folder, tell them to use the zip steps above.
+If you were asked to install this skill, copy the `skills/stickman` folder from this repository, or the `stickman` folder inside `stickman.zip`, to `~/.claude/skills/stickman` (on Windows, `%USERPROFILE%\.claude\skills\stickman`). Then tell the person to start a new session and use `/stickman`. In a chat that can't write there, tell them to use the zip steps above, so the whole folder is installed and not just SKILL.md.
 
 ## Use
 
@@ -61,7 +63,7 @@ If you were asked to install this skill, copy the `skills/stickman` folder from 
 /stickman a 30 second story about a lighthouse keeper who finds a message in a bottle
 ```
 
-Claude asks about anything the request leaves open: 2D or 3D, length, voiceover, sound effects, background music and storyboard. You can also ask for only a voiceover script, or only titles and thumbnail prompts.
+Claude asks about anything the request leaves open: 2D or 3D, length, voiceover, sound effects, background music and whether you want a storyboard first. You can also ask for only story ideas, a voiceover script, or titles and thumbnail prompts.
 
 **With a voiceover:** attach your MP3 and the script text. The film is cut to your voice. No SRT is needed.
 
@@ -70,11 +72,11 @@ Claude asks about anything the request leaves open: 2D or 3D, length, voiceover,
 ## What runs where
 On first use the skill checks for Python, ffmpeg, Chromium (through Playwright), numpy, scipy and Pillow, and installs what is missing. The Claude chat sandbox normally has these already. In Claude Code you need Python 3 on your machine. The 3D route also needs Node.
 
-Render time is about 4 minutes for 30 s of 2D on 2 cores. 3D is about 8 times slower. If a run stops, the same command resumes it.
+Render time is about 4 minutes for 30 s of 2D on 2 cores. 3D takes longer. If a run stops, the same command resumes it.
 
 ## Good to know
 - Claude can't hear audio, so the mix is measured, not listened to. Give it a listen and ask for changes.
-- 3D is the less proven route. 2D is the default for a reason.
+- 3D uses the same colours and flat look as 2D, and adds real camera moves.
 - Long films on the free plan may hit usage limits. Start short.
 
 ## Licence and credits

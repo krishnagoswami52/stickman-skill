@@ -10,6 +10,7 @@ if d.exists() and any(d.iterdir()):
     raise SystemExit(f"{d} is not empty")
 d.mkdir(parents=True, exist_ok=True)
 if o.three:
+    shutil.copytree(SKILL / "engine", d, dirs_exist_ok=True)   # 3D sets are painted by the 2D set code
     for f in (SKILL / "engine3d").iterdir():
         shutil.copy(f, d)
     shutil.copy(SKILL / "templates" / "film_3d.js", d / "film.js")

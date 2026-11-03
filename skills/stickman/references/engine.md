@@ -60,6 +60,7 @@ New sets follow the same rule: flat shapes, the palette, one world. Add sets, an
 | `new_film.py <folder> [--3d]` | Creates a film folder |
 | `stills.py <folder> <out.jpg> <times>` | Contact sheet of chosen times |
 | `build.py <folder> --out x.mp4 [--shots ...] [--audio-only] [--jobs N] [--crf N]` | Everything from render to audit |
+| `storyboard.py <folder>` | Numbered preview of every shot, before rendering |
 | `audit.py <folder> <file.mp4>` | The audit alone |
 | `align.py <folder> <mp3> <script.txt>` | Word timings from a voiceover |
 | `bundle_player.py <folder>` | One-file HTML player with WebM export |

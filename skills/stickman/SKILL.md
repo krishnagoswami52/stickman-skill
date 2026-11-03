@@ -18,21 +18,25 @@ The user may want the whole package or one part. Do only what was asked:
 
 | Request | Do |
 |---|---|
+| Story ideas | Do "Story ideas" below, then stop |
 | Make a video | Steps 2-6 |
 | Write a voiceover script | Read `references/script-playbook.md`, deliver the script, stop |
 | Titles or thumbnails | Read `references/packaging-playbook.md`, deliver the pairs, stop |
 | Full package | Script, then video, then titles and thumbnail prompts |
 
+## Story ideas
+If the length is not stated, ask how long the videos should be first. Then give 5 ideas, numbered, so the person can pick one by its number. Each idea has a short name, one plain sentence saying what happens, and the ending. Fit each idea to that length: under 20 s means one character and one simple turn. Ideas must be easy to animate with what is in `references/engine.md`, and each must be original. Later, "make idea 3" means that idea.
+
 ## Step 2: Ask before building
 
 Unless the request already makes it clear, ask these together in one message, and use a question tool if there is one. Skip anything already answered. If nobody is there to answer, use the default and say so.
 
-1. **Style:** 2D or 3D? Default 2D. 3D takes about 8 times longer and is the less proven route.
+1. **Style:** 2D or 3D? Default 2D. Both use the same look. 3D adds real camera moves around the scene.
 2. **Length:** how long? Default 30 s. With an MP3, the voiceover sets the length.
 3. **Voiceover:** yes or no? Skip this if an MP3 is attached. If yes, they supply an MP3 and its script text, or ask you to write a script for ElevenLabs and come back with the MP3. No SRT is needed.
 4. **Sound effects:** yes or no? Default yes.
 5. **Background music:** yes or no? Default no. If yes, use their uploaded track if there is one, otherwise the code-made music bed.
-6. **Storyboard:** see the shot plan before rendering? Default no.
+6. **Storyboard:** do you want to see a storyboard first? Always ask this unless the request already says. If nobody is there to answer, skip it.
 
 Do not assume music, effects or voice. Quiet room ambience is not music.
 
@@ -63,14 +67,15 @@ Write these before any drawing code, because planning inside the code produces s
 4. A shot list with cut frames, not seconds. Aim for 8-11 shots per 30 s, and include a wide shot that shows the geography.
 5. The thumbnail moment, if a package was asked for, so it exists as a real scene.
 
-If a storyboard was requested, show this and wait.
+If a storyboard was requested, follow "Storyboard" in Step 5 before rendering.
 
 ## Step 5: Build
 
 1. Replace `film/film.js`, keeping the engine files. Start from the patterns in the starter film.
 2. Check stills at the busiest moments, and view the image: `python3 SKILL/scripts/stills.py film sheet.jpg 1 4.5 9 ...`. Two rounds is normal.
-3. Edit the marked block of `film/audio_mix.py` to match the sound brief.
-4. Render, mix, join and audit with one command:
+3. **Storyboard, if requested.** Run `python3 SKILL/scripts/storyboard.py film`. It writes `film/storyboard.jpg`, one numbered preview per shot, drawn by the same code as the final film. Show the person a table with one row per shot (shot, time, what happens, camera, sound), and show or send the image. If images can't be shown here, send the file, or give the table alone and say so. Then stop and wait. Change the film as they ask, re-run the storyboard if it changed much, and render only after they approve.
+4. Edit the marked block of `film/audio_mix.py` to match the sound brief.
+5. Render, mix, join and audit with one command:
 
 ```
 python3 SKILL/scripts/build.py film --out my-film.mp4
