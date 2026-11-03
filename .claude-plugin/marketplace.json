@@ -1,0 +1,12 @@
+{
+  "name": "stickman-skill",
+  "owner": { "name": "michxlai" },
+  "description": "The stickman video skill for Claude.",
+  "plugins": [
+    {
+      "name": "stickman",
+      "source": "./",
+      "description": "Make cinematic stickman story videos as MP4 from code, plus voiceover scripts, YouTube titles and thumbnail prompts."
+    }
+  ]
+}

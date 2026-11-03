@@ -1,0 +1,8 @@
+{
+  "name": "stickman",
+  "description": "Make cinematic stickman story videos as MP4 from code, plus voiceover scripts, YouTube titles and thumbnail prompts.",
+  "version": "1.0.0",
+  "author": { "name": "michxlai" },
+  "repository": "https://github.com/michxlai/stickman-skill",
+  "license": "MIT"
+}
