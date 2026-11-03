@@ -2,6 +2,14 @@
 
 A Claude skill that turns a topic into a finished stickman film: an MP4 rendered entirely from code, with film-style camera work and real sound effects.
 
+## Install in 3 clicks (Claude app or claude.ai, free plan too)
+1. **[Download stickman.zip](https://github.com/michxlai/stickman-skill/raw/main/stickman.zip)** and leave it zipped.
+2. Open [**Customize > Skills**](https://claude.ai/customize/skills), click **+**, choose **Create skill**, then **Upload a skill** and pick the zip.
+3. Switch the skill on, then type `/stickman` in a new chat.
+
+If it won't run, check that code execution is on under **Settings > Capabilities** ("Create and edit files").
+
+## What it does
 - **Story ideas:** a numbered list of ideas to pick from, fitted to your length.
 - **Storyboard:** a scene-by-scene table with preview images to approve before the render.
 - **Video:** 2D or 3D in the same look, any length, with planted-foot walking and a frame-by-frame audit.
@@ -11,23 +19,16 @@ A Claude skill that turns a topic into a finished stickman film: an MP4 rendered
 
 It needs no paid tools and no AI image or video tools. ElevenLabs is optional. It runs on Windows, macOS and Linux, and it is built for the Claude free plan too.
 
-## Install
+## Install in Claude Code
 
-### Claude app or claude.ai, including the free plan
-1. Download [`stickman.zip`](https://github.com/michxlai/stickman-skill/raw/main/stickman.zip). Leave it zipped.
-2. Check that code execution is on: **Settings > Capabilities**, "Create and edit files".
-3. Go to [**Customize > Skills**](https://claude.ai/customize/skills).
-4. Click **+**, choose **Create skill**, then **Upload a skill**, and pick the zip.
-5. Switch the skill on, and type `/stickman` in a new chat.
-
-### Claude Code: paste the link
+### Paste the link
 Paste this into Claude Code:
 
 ```text
 Install the skill from https://github.com/michxlai/stickman-skill by following its README
 ```
 
-### Claude Code: commands
+### Commands
 macOS or Linux:
 
 ```bash
@@ -46,7 +47,7 @@ Copy-Item -Recurse -Force stickman-skill\skills\stickman "$HOME\.claude\skills\"
 
 Then start a new session and type `/stickman`.
 
-### Claude Code: plugin
+### Plugin
 This route is easy to update, but the command becomes `/stickman:stickman`:
 
 ```text
