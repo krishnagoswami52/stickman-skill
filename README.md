@@ -3,7 +3,7 @@
 A Claude skill that turns a topic into a finished stickman film: an MP4 rendered entirely from code, with film-style camera work, real sound effects and **a free built-in voiceover**. Give it a script, or let Claude write one, and the narration is spoken by an open-source voice and mixed into the video. No ElevenLabs, no API key, no cost.
 
 ## Install in 3 clicks (Claude app or claude.ai, free plan too)
-1. **[Download stickman.zip](https://github.com/OWNER/REPO/raw/main/stickman.zip)** and leave it zipped.
+1. **[Download stickman.zip](https://github.com/krishnagoswami52/stickman-skill/raw/main/stickman.zip)** and leave it zipped.
 2. Open [**Customize > Skills**](https://claude.ai/customize/skills), click **+**, choose **Create skill**, then **Upload a skill** and pick the zip.
 3. Switch the skill on, then type `/stickman` in a new chat.
 
@@ -55,24 +55,24 @@ You can also blend two voices into one, for example `am_michael:0.6+bm_george:0.
 Paste this into Claude Code:
 
 ```text
-Install the skill from https://github.com/OWNER/REPO by following its README
+Install the skill from https://github.com/krishnagoswami52/stickman-skill by following its README
 ```
 
 ### Commands
 macOS or Linux:
 
 ```bash
-git clone https://github.com/OWNER/REPO.git
+git clone https://github.com/krishnagoswami52/stickman-skill.git
 mkdir -p ~/.claude/skills
-cp -R REPO/skills/stickman ~/.claude/skills/
+cp -R stickman-skill/skills/stickman ~/.claude/skills/
 ```
 
 Windows PowerShell:
 
 ```powershell
-git clone https://github.com/OWNER/REPO.git
+git clone https://github.com/krishnagoswami52/stickman-skill.git
 New-Item -ItemType Directory -Force "$HOME\.claude\skills"
-Copy-Item -Recurse -Force REPO\skills\stickman "$HOME\.claude\skills\"
+Copy-Item -Recurse -Force stickman-skill\skills\stickman "$HOME\.claude\skills\"
 ```
 
 Then start a new session and type `/stickman`.
@@ -81,8 +81,8 @@ Then start a new session and type `/stickman`.
 This route is easy to update, but the command becomes `/stickman:stickman`:
 
 ```text
-/plugin marketplace add OWNER/REPO
-/plugin install stickman@MARKET
+/plugin marketplace add krishnagoswami52/stickman-skill
+/plugin install stickman@stickman-free-voice
 ```
 
 ### For Claude

@@ -1,7 +1,7 @@
 {
-  "name": "stickman-skill",
+  "name": "stickman-free-voice",
   "owner": {
-    "name": "michxlai"
+    "name": "krishnagoswami52"
   },
   "description": "The stickman video skill for Claude, with a free built-in AI voiceover.",
   "plugins": [

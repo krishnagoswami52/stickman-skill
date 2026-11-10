@@ -3,8 +3,8 @@
   "description": "Make cinematic stickman story videos as MP4 from code, with a free built-in AI voiceover (no ElevenLabs), voiceover scripts, YouTube titles and thumbnail prompts.",
   "version": "1.1.0",
   "author": {
-    "name": "michxlai"
+    "name": "krishnagoswami52"
   },
-  "repository": "https://github.com/michxlai/stickman-skill",
+  "repository": "https://github.com/krishnagoswami52/stickman-skill",
   "license": "MIT"
 }
