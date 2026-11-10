@@ -1,6 +1,6 @@
 ---
 name: stickman
-description: Make cinematic stickman story videos as MP4 from code, plus ElevenLabs voiceover scripts, YouTube titles and thumbnail prompts. Use for /stickman or any stickman animation request.
+description: Make cinematic stickman story videos as MP4 from code, plus ElevenLabs voiceover scripts, a free built-in open-source voiceover (no ElevenLabs needed), YouTube titles and thumbnail prompts. Use for /stickman or any stickman animation request.
 argument-hint: "[topic or story] [length]"
 ---
 
@@ -8,7 +8,7 @@ argument-hint: "[topic or story] [length]"
 
 Turn a topic into a finished stickman film rendered entirely from code: flat 2D characters, a dusk palette, film-style camera work and real sound. The skill covers four outputs: the video, the voiceover script, YouTube titles and thumbnail prompts.
 
-It works anywhere Claude can run code, including the Claude free plan. No paid tools are needed and no AI image or video tools are used. ElevenLabs is optional and only for voiceover.
+It works anywhere Claude can run code, including the Claude free plan. No paid tools are needed and no AI image or video tools are used. ElevenLabs is optional and only for voiceover. Without an MP3, the skill speaks the script itself with a free open-source voice (`scripts/tts.py`, see `references/free-voice.md`), so a narrated film needs no ElevenLabs at all.
 
 Everything below is relative to this skill's folder (the folder holding this file). Find its absolute path once and use it for every script. On Claude Code it is `${CLAUDE_SKILL_DIR}`. Call it `SKILL` in the commands below. Use `python3`, or `python` on Windows.
 
@@ -21,6 +21,7 @@ The user may want the whole package or one part. Do only what was asked:
 | Story ideas | Do "Story ideas" below, then stop |
 | Make a video | Steps 2-6 |
 | Write a voiceover script | Read `references/script-playbook.md`, deliver the script, stop |
+| Turn a script into a voiceover | Read `references/free-voice.md`, run `tts.py`, deliver `vo.mp3`, stop |
 | Titles or thumbnails | Read `references/packaging-playbook.md`, deliver the pairs, stop |
 | Full package | Script, then video, then titles and thumbnail prompts |
 
@@ -33,7 +34,7 @@ Unless the request already makes it clear, ask these together in one message, an
 
 1. **Style:** 2D or 3D? Default 2D. Both use the same look. 3D adds real camera moves around the scene.
 2. **Length:** how long? Default 30 s. With an MP3, the voiceover sets the length.
-3. **Voiceover:** yes or no? Skip this if an MP3 is attached. If yes, they supply an MP3 and its script text, or ask you to write a script for ElevenLabs and come back with the MP3. No SRT is needed.
+3. **Voiceover:** yes or no? Skip this if an MP3 is attached. If yes, they supply an MP3 and its script text, or ask you to write a script for ElevenLabs and come back with the MP3. No SRT is needed. Or, the default when there is no MP3: the free built-in voice speaks the script, theirs or one you write, so they never leave the chat. Ask which voice only if they care; `references/free-voice.md` has the audition.
 4. **Sound effects:** yes or no? Default yes.
 5. **Background music:** yes or no? Default no. If yes, use their uploaded track if there is one, otherwise the code-made music bed.
 6. **Storyboard:** do you want to see a storyboard first? Always ask this unless the request already says. If nobody is there to answer, skip it.
@@ -49,13 +50,15 @@ python3 SKILL/scripts/new_film.py film        # add --3d for 3D
 
 `doctor.py` installs anything missing. If Chromium cannot run at all, go to "If rendering is not possible".
 
+**Free voice:** make it now, before planning, because the voice sets the timing. Save the script as `film/script.txt`, then run `python3 SKILL/scripts/tts.py film film/script.txt --voice am_michael` and set `VOICE = "vo.wav"` in `film/audio_mix.py`. Details in `references/free-voice.md`.
+
 Then read, in this order:
 1. `references/style-bible.md`: the look and the rules that never bend.
 2. `references/production.md`: the fast path and known traps.
 3. `references/engine.md`: the toolkit, so you reuse it instead of redrawing.
 4. `references/film-craft.md`: story and shots for wordless or short films.
 
-Also read when relevant: `references/script-playbook.md` for writing a script, `references/voiceover.md` for an MP3, `references/sound.md` for the mix, `references/symbolic-beats.md` for films of about a minute or longer, `references/3d.md` for 3D.
+Also read when relevant: `references/script-playbook.md` for writing a script, `references/free-voice.md` for the free built-in voice, `references/voiceover.md` for an MP3, `references/sound.md` for the mix, `references/symbolic-beats.md` for films of about a minute or longer, `references/3d.md` for 3D.
 
 ## Step 4: Plan the film
 

@@ -110,6 +110,9 @@ Long scripts: a 900-word script is about 5,000 characters, so split at paragraph
 
 Multi-speaker: one distinct voice per speaker. In v4 and v3 the documented form is `Speaker 1: [excitedly] ...`.
 
+## Free built-in voice delivery
+The same paste-ready script feeds `scripts/tts.py`, so no ElevenLabs step is needed. Differences: `<break time="1.5s" />` and `[pause 1.5]` give exact silences; other audio tags are dropped because the free voice has no emotion tags, so carry the feeling with wording and punctuation; for Hindi or Hinglish, write Hindi words in Devanagari. Details in `free-voice.md`.
+
 ## Quality check
 - First 10 seconds: is it clear who and what this is about, and is the ache or danger clear?
 - By 15%: is the promise clear?

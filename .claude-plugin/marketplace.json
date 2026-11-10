@@ -1,12 +1,14 @@
 {
   "name": "stickman-skill",
-  "owner": { "name": "michxlai" },
-  "description": "The stickman video skill for Claude.",
+  "owner": {
+    "name": "michxlai"
+  },
+  "description": "The stickman video skill for Claude, with a free built-in AI voiceover.",
   "plugins": [
     {
       "name": "stickman",
       "source": "./",
-      "description": "Make cinematic stickman story videos as MP4 from code, plus voiceover scripts, YouTube titles and thumbnail prompts."
+      "description": "Make cinematic stickman story videos as MP4 from code, with a free built-in AI voiceover (no ElevenLabs), voiceover scripts, YouTube titles and thumbnail prompts."
     }
   ]
 }

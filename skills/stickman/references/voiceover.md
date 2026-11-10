@@ -6,6 +6,7 @@ Voiceover is optional. If the answer is no, skip this file.
 - MP3 plus script text: the standard path. No SRT is needed.
 - MP3 only: run recognition for a draft, show it to the person, correct it, then align. Blind recognition gets words wrong, so never use its text unchecked.
 - SRT: accepted, not required.
+- No MP3: make the voice free with `scripts/tts.py` (see `free-voice.md`). It writes `vo.wav`, `align.json` and `pauses.json` for you, so start at step 3 below.
 
 ## Steps
 1. Run `python3 SKILL/scripts/align.py film vo.mp3 script.txt`. It installs a free package, writes `film/align.json` with each word's start and end, and lists pauses from silence detection. Alignment is English only as tested.

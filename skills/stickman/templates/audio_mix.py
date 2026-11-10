@@ -8,7 +8,7 @@ info = json.load(open("film.json"))
 m = Mix(info["dur"], seed=9)
 
 # ---- EDIT FROM HERE: set this from the sound brief ----
-SFX, MUSIC, VOICE = True, False, None     # VOICE = "vo.mp3" to lay in a voiceover
+SFX, MUSIC, VOICE = True, False, None     # VOICE = "vo.mp3" to lay in a voiceover, or "vo.wav" from scripts/tts.py
 
 if SFX:
     m.room_bed([(0, 1), (3, 1), (4.5, .35), (info["dur"], .3)])

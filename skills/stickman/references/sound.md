@@ -27,7 +27,7 @@ Place sounds from `plants` and `EVENTS` so they stay on the picture's clock. Foo
 - Stock music from the internet is not used, because its licence cannot be checked here.
 
 ## Voice
-`m.voice("vo.mp3",at=.5,gain_db=-3.5,cuts=[(voice_time,hold)])`. Effects are ducked under it automatically. If it clips, lower `gain_db`.
+`m.voice("vo.mp3",at=.5,gain_db=-3.5,cuts=[(voice_time,hold)])`. Effects are ducked under it automatically. If it clips, lower `gain_db`. The free built-in voice is `vo.wav` and takes the same settings.
 
 ## Targets
 About -17 LUFS overall, peak under -1 dBFS. A flat loudness range under 2 LU usually means a bed is too loud and is flattening everything. Reduce it.
